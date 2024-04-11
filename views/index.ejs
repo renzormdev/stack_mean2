@@ -9,7 +9,7 @@
     <title>Crud mongo</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Stack</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
@@ -79,9 +79,9 @@
                 <% clientes.forEach((cliente) => { %>
                     <tr>
                         <td style="display: none;"><%= cliente._id %></td>
-                        <td><%= cliente.nombres %></td>
+                        <td><%= cliente.nombre %></td>
                         <td><%= cliente.apellidos %></td>
-                        <td><%= cliente.ciudad %></td>
+                        <td><%= cliente.direccion %></td>
                         <td>
                             <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
                             <a href="/borrar/<%= cliente._id %>" class="btn btn-outline-danger bi bi-trash"></a>
