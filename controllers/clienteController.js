@@ -18,7 +18,7 @@ module.exports.crear = (req, res) => {
     const cliente = new Cliente({
         nombre: req.body.nombre,
         apellidos: req.body.apellidos,
-        ciudad: req.body.ciudad
+        direccion: req.body.direccion
     });
     cliente.save((error, clienteGuardado) => {
         if (error) {
@@ -36,9 +36,9 @@ module.exports.editar = (req, res) => {
     const id = req.body.id_editar.trim();
     const nombre = req.body.nombre_editar;
     const apellidos = req.body.apellidos_editar;
-    const ciudad = req.body.ciudad_editar;
+    const direccion = req.body.direccion;
 
-    Cliente.findByIdAndUpdate(id, { nombre, apellidos, ciudad }, (error, clienteActualizado) => {
+    Cliente.findByIdAndUpdate(id, { nombre, apellidos, direccion }, (error, clienteActualizado) => {
         if (error) {
             return res.status(500).json({
                 message: 'Error actualizando al cliente',
